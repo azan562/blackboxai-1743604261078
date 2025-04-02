@@ -1,0 +1,131 @@
+/* Game Canvas Setup */
+#gameCanvas {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Game UI Elements */
+#game-ui {
+    pointer-events: none;
+}
+
+/* Game Over Screen */
+#game-over {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Explosion Animation */
+@keyframes explosion {
+    0% { transform: scale(0.5); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+.explosion {
+    position: absolute;
+    background-color: orange;
+    border-radius: 50%;
+    animation: explosion 0.5s ease-out forwards;
+    pointer-events: none;
+}
+
+/* Player Bullet */
+.player-bullet {
+    position: absolute;
+    background-color: cyan;
+    width: 4px;
+    height: 12px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px cyan;
+}
+
+/* Enemy Bullet */
+.enemy-bullet {
+    position: absolute;
+    background-color: red;
+    width: 4px;
+    height: 12px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px red;
+}
+
+/* Player Ship */
+.player {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3394/3394049.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 10px #00ffff);
+}
+
+/* Enemy Ships */
+.enemy {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.enemy-type1 {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3394/3394046.png');
+    filter: drop-shadow(0 0 5px #ff0000);
+}
+
+.enemy-type2 {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3394/3394051.png');
+    filter: drop-shadow(0 0 5px #ff9900);
+}
+
+.enemy-type3 {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3394/3394053.png');
+    filter: drop-shadow(0 0 5px #9900ff);
+}
+
+/* Power-ups */
+.powerup {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.shield-powerup {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3394/3394044.png');
+    filter: drop-shadow(0 0 5px #00ff00);
+}
+
+.rapidfire-powerup {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3394/3394043.png');
+    filter: drop-shadow(0 0 5px #ffff00);
+}
+
+/* Health Bar */
+.health-bar {
+    height: 5px;
+    background: linear-gradient(to right, #00ff00, #ffff00, #ff0000);
+    transition: width 0.3s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #start-screen h1 {
+        font-size: 3rem;
+    }
+    
+    #start-btn {
+        font-size: 1.5rem;
+        padding: 0.75rem 1.5rem;
+    }
+}
